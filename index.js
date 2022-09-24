@@ -18,7 +18,8 @@ app.get("/", (req, res) => {
 		load_average: os.loadavg()[1],
 		uptime_s: os.uptime().toFixed(2).toString() + 's',
 		uptime_m: (os.uptime()/60).toFixed(2).toString() + 'm',
-		uptime_h: ((os.uptime()/60)/60).toFixed(2).toString() + 'h'
+		uptime_h: ((os.uptime()/60)/60).toFixed(2).toString() + 'h',
+		uptime_d: (((os.uptime()/60)/60)/24).toFixed(2).toString() + 'd'
 	})
 })
 
