@@ -13,7 +13,12 @@ app.get("/", (req, res) => {
 	res.status(200).json({
 		free_memory: bytesToGigabyte(os.freemem()),
 		total_memory: bytesToGigabyte(os.totalmem()),
-		used_memory: bytesToGigabyte(os.totalmem()-os.freemem())
+		used_memory: bytesToGigabyte(os.totalmem()-os.freemem()),
+		cpus: os.cpus().length,
+		load_average: os.loadavg()[1],
+		uptime_s: os.uptime().toFixed(2).toString() + 's',
+		uptime_m: (os.uptime()/60).toFixed(2).toString() + 'm',
+		uptime_h: ((os.uptime()/60)/60).toFixed(2).toString() + 'h'
 	})
 })
 
