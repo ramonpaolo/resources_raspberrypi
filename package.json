@@ -3,6 +3,8 @@
   "dependencies": {
     "express": "^4.18.1"
   },
+	"scripts": {
+	"start": "node index.js"},
   "name": "free_resources",
   "version": "1.0.0",
   "main": "index.js",
